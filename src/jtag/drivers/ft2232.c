@@ -516,6 +516,10 @@ static int ft2232_write(uint8_t* buf, int size, uint32_t* bytes_written)
 	{
 		*bytes_written = 0;
 		LOG_ERROR("ftdi_write_data: %s", ftdi_get_error_string(&ftdic));
+        if (1) {
+            LOG_ERROR("exiting\n");
+            exit(1);
+        }
 		return ERROR_JTAG_DEVICE_ERROR;
 	}
 	else
